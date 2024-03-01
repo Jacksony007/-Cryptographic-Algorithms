@@ -1,0 +1,733 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.top-nav {
+    display: flex;
+    flex: 3;
+    max-height: 50px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    flex: 4;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2.5em;
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    color: rgb(60, 142, 135);
+}
+
+.register-login-flex {
+    display: flex;
+    flex: 8;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.register-login-flex a {
+    text-decoration: none;
+}
+
+.standard-button {
+    border: 1px solid rgb(60, 142, 135);
+    color: rgb(60, 142, 135);
+    border-radius: 5px;
+    height: 20px;
+    padding: 5px 10px;
+    margin-right: 1em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.standard-button:hover {
+    background-color: rgb(60, 142, 135);
+    color: white;
+}
+
+.background,
+.dashboard-background {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background {
+    background-image: url("/Frontend/assets/images/background_image_1.jpg");
+}
+
+.dashboard-background {
+    background-image: url("/Frontend/assets/images/background_image_2.jpg");
+}
+
+.welcome {
+    flex: 6;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 5em;
+    color: white;
+    font-size: 2em;
+    width: 80%;
+    font-weight: bold;
+}
+
+.background-info {
+    flex: 6;
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
+    line-height: 1.5;
+    color: white;
+    font-size: 20px;
+    margin: 1em;
+}
+
+.join-now {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 120px;
+    height: 50px;
+    margin-bottom: 10em;
+    margin-left: 10em;
+}
+
+.join-now a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.join-now i {
+    margin-left: 0.2em;
+}
+
+.join-now:hover {
+    font-weight: bolder;
+}
+
+.message-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1em auto;
+    padding: 1em;
+    width: fit-content;
+}
+
+.register_form,
+.login_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: auto;
+    min-width: 350px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.75em;
+    color: rgb(60, 142, 135);
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5em;
+}
+
+.label {
+    font-size: 1.2em;
+    padding-bottom: 0.2em;
+    font-weight: bold;
+    color: rgb(60, 142, 135);
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-content input {
+    padding: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.form-content input[type="text"],
+.form-content input[type="password"],
+.form-content input[type="email"] {
+    border: 1px solid rgb(60, 142, 135);
+}
+
+.form-content input[type="body"]:focus {
+    outline: 1px solid rgb(60, 142, 135);
+}
+
+.form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(60, 142, 135);
+    border-radius: 5px;
+    min-width: 30%;
+    padding: 0.5em;
+    margin: auto;
+}
+
+.form-button:hover {
+    background-color: rgb(60, 142, 135);
+    color: white;
+    cursor: pointer;
+}
+
+.note {
+    text-align: center;
+    padding: 0.5em;
+}
+
+.note a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(60, 142, 135);
+}
+
+.note a:hover {
+    cursor: pointer;
+}
+
+.modal-content a {
+    text-decoration: dashed;
+    font-weight: bold;
+    color: rgb(60, 142, 135);
+}
+
+.profile {
+    display: flex;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+.profile-image img,
+.sender-profile-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.profile-name {
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(60, 142, 135);
+}
+
+.profile-name:hover {
+    cursor: pointer;
+}
+
+.fa-caret-down {
+    margin-left: 0.5em;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin-top: 4em;
+    margin-left: 4em;
+}
+
+.profile-dropdown a {
+    text-decoration: none;
+    color: red;
+}
+
+.main-content {
+    display: flex;
+    padding: 2em;
+}
+
+.message-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 8;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.message-forms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2em;
+    padding-bottom: 0.5em;
+}
+
+.standard-tab {
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5em;
+    border: 1px solid rgb(60, 142, 135);
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-right: 2em;
+    font-weight: bold;
+}
+
+.message-forms a {
+    text-decoration: none;
+    color: black;
+}
+
+.encrypted-text-form,
+.encrypted-image-form {
+    color: rgb(60, 142, 135);
+}
+
+.standard-tab:hover {
+    background-color: rgb(60, 142, 135);
+    color: white;
+    cursor: pointer;
+}
+
+.message-objects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.message-object {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.message-object:hover,
+.image-object:hover {
+    cursor: pointer;
+}
+
+.message-image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-data {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 7;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0.2em;
+}
+
+.sender-username {
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(60, 142, 135);
+    padding: 0.2em;
+}
+
+.text-date-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 100%;
+}
+
+.message-cipher {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 6;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.2em 1em;
+}
+
+.message-date {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 2;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0.2em 1em;
+}
+
+.message-cipher,
+.message-date {
+    font-size: 0.9em;
+}
+
+.image-objects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.image-object {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
+    border: 1px solid rgb(60, 142, 135);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    max-width: 450px;
+}
+/* w: 400 h: 300
+ */
+.image-container img {
+    width: 400px;
+    height: 300px;
+}
+
+.image-meta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.sender-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.message-date,
+.image-date {
+    color: gray;
+}
+
+.other-content {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin-left: 5em; */
+}
+
+.share-key-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: auto 5em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+}
+
+.share-key-form .form-button {
+    margin-bottom: 1em;
+}
+
+.share-image-container {
+    width: 215px;
+    height: 125px;
+    margin: 1em 5em;
+    padding: 0.5em 1em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.share-image-container {
+    background-image: url("/Frontend/assets/images/share_message.jpg");
+    color: rgb(60, 142, 135);
+}
+
+.share-message-container {
+    background-image: url("/Frontend/assets/images/share_message.jpg");
+}
+
+.share-image-container,
+.share-message-container {
+    text-decoration: none;
+    color: rgb(60, 142, 135);
+}
+
+.share-image-container:hover {
+    cursor: pointer;
+}
+
+.share-image-container:hover {
+    color: white;
+}
+
+.share-message-container:hover {
+    color: white;
+}
+
+/* MODAL CONTAINER */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    width: 60%;
+}
+
+.form-format {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 50vh;
+    min-width: 50vw;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.decoration {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(60, 142, 135);
+}
+
+.modal-container .form-content {
+    flex: 5;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title {
+    color: rgb(60, 142, 135);
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0.5em;
+}
+
+.form-message {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+#share-image-form {
+    width: 100%;
+}
+
+.form-input {
+    padding-bottom: 0.5em;
+}
+
+.input-field {
+    font-size: 15px;
+    display: block;
+    border: 1px solid rgb(60, 142, 135);
+    border-radius: 5px;
+    width: 90%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
+
+.input-field:focus {
+    outline: 1px solid rgb(60, 142, 135);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.form-buttons button {
+    padding: 5px 10px;
+}
+
+.cancel-button,
+.submit-button {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.cancel-button:hover,
+.submit-button:hover {
+    cursor: pointer;
+}
+
+.cancel-button:hover,
+.submit-button:hover{
+    color: white;
+}
+
+.cancel-button {
+    border: 2px solid red;
+}
+
+.cancel-button {
+    color: red;
+}
+
+.cancel-button:hover {
+    background-color: red;
+    border: 2px solid red;
+}
+
+.submit-button {
+    border: 2px solid green;
+}
+
+.submit-button:hover {
+    background-color: green;
+    border: 2px solid green;
+}
+
+.submit-button {
+    color: green;
+}
+
+#cancel-cross,
+#submit-plane {
+    font-size: medium;
+    padding-left: 5px;
+}
+
+#message-object-modal-content {
+    width: 40%;
+}
+
+.object-style {
+    padding: 1em;
+}
+
+.object-label {
+    font-weight: bold;
+    color: rgb(60, 142, 135);
+    padding: 0.5em;
+}
+
+.object-data {
+    padding: 0.2em 1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#decrypt-message-form,
+#image-analysis {
+    display: none;
+}
+
+#image-object-modal-content #message-cipher,
+#image-object-modal-content #private-key-data {
+    display: none;
+}
+
+#encrypted-message-lsb,
+#compressed-message-huffman {
+    display: none;
+}
+
+.radio-item {
+    display: flex;
+}
+
+.radio-item input {
+    display: flex;
+    flex: 8;
+    justify-content: flex-end;
+}
+
+.radio-item label {
+    display: flex;
+    flex: 4;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0.5em;
+}
+
+#image-preview {
+    width: 100%;
+    padding-top: 10px;
+}

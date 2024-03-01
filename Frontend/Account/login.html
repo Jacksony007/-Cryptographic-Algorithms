@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Login</title>
+    <link rel="stylesheet" href="/Frontend/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="top-nav">
+            <div class="logo"><a href="/Frontend/index.html">CryptoStego</a></div>
+            <div class="register-login-flex">
+                <a href="/Frontend/Account/register.html" class="standard-button">
+                    <div class="register">Register</div>
+                </a>
+                <!-- <a href="/Frontend/Account/login.html" class="standard-button">
+                    <div class="login">Login</div>
+                </a> -->
+            </div>
+        </div>
+
+        <div class="background">
+            <div id="message-container" class="message-container">
+                <div id="message" class="message">
+                    Oops, an error occured!!
+                </div>
+            </div>
+            
+            <div class="login_form">
+                <form id="login_form" enctype="multipart/form-data">
+                    <div class="form-title">Login</div>
+                    <div class="form-content">
+                        <div style="margin: 0.5em;">
+                            <div class="label">
+                                <label for="username">Username:</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                        </div>
+
+                        <div style="margin: 0.5em;">
+                            <div class="label">
+                                <label for="password">Password:</label>
+                            </div>
+                            <div class="input">
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                        </div>
+
+                        <div style="margin: 0.5em;">
+                            <div class="label">
+                                <label for="private_key">Private Key:</label>
+                            </div>
+                            <div class="input">
+                                <input type="file" id="private_key" name="private_key" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="login-button" class="form-button">Login</button>
+
+                    <div class="note">
+                        Don't have an account? Register <a href="/Frontend/Account/register.html">here.</a>
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </div>
+
+    <script src="/Frontend/assets/js/login.js"></script>
+</body>
+
+</html>

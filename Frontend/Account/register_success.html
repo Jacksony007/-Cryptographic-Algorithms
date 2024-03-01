@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="/Frontend/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="top-nav">
+            <div class="logo"><a href="/Frontend/index.html">CryptoStego</a></div>
+            <div class="register-login-flex">
+                <!-- <a href="/Frontend/Account/register.html" class="standard-button">
+                    <div class="register">Register</div>
+                </a> -->
+                <a href="/Frontend/Account/login.html" class="standard-button">
+                    <div class="login">Login</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="background">
+
+            <div class="modal-container" style="display: block;">
+                <div class="modal-content">
+                    <div style="text-align: center; padding: 0.5em;">
+                        <div style="color: green; font-weight: bold; font-size: 1.2em;">
+                            Account created successfully!!
+                        </div>
+                    </div>
+
+                    <div id="welcome-message" style="line-height: 1.5; padding: 1em;">
+                        Welcome to <div style="display: inline; color: rgb(60, 142, 135); font-weight: bold;">
+                            CryptoLibrary</div>, <span id="user"></span>!<br>
+                        You'll need your private key to login and share messages with your friends and allies alike.<br>
+                        Please click
+                        <a id="private-key-link" href="#" download>
+                            here
+                        </a>
+                        to download the private key.<br>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; padding-bottom: 1em;">
+                        <a href="/Frontend/Account/login.html" class="standard-button">
+                            <div class="login">Login</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                if (localStorage.getItem('is_visited') === 'true') {
+                    window.location.href = '/Frontend/Account/login.html';
+                }
+                
+                localStorage.setItem('is_visited', true);
+                localStorage.removeItem('register_username');
+
+                var urlParams = new URLSearchParams(window.location.search);
+                var username = urlParams.get('username');
+
+                // Check if the parameter is present and do something with the username
+                if (username) {
+                    var user = document.getElementById('user');
+                    user.textContent = username;
+                    user.style.fontWeight = 'bold';
+
+                    var privateKeyLink = document.getElementById('private-key-link');
+                    privateKeyLink.href = `../../CryptoLibrary/media/keys/private_keys/${username}_private_key.pem`;
+                    privateKeyLink.download = `${username}_private_key.pem`;
+                } else {
+                    window.location.href = '/Frontend/Account/register.html';
+                }
+            </script>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

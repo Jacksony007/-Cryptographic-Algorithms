@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel='stylesheet' href='/Frontend/assets/css/main.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
+        crossorigin='anonymous'>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="top-nav">
+            <div class="logo"><a href="/Frontend/Account/dashboard.html">CrytographyLibra</a></div>
+            <div class="profile">
+                <div class="profile-image"><img src="/Frontend/assets/images/Pastor Edwin.jpg" alt=""></div>
+                <div class="profile-name">
+                    <span id="username-container">Username</span>
+                    <i id="caret-down" class="fas fa-caret-down"></i>
+                </div>
+                <div class="profile-dropdown">
+                    <a href="#" id="logout" class="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPDATE PROFILE NAME -->
+        <script>
+            const profile_name_container = document.getElementById('username-container');
+            const username = localStorage.getItem('username');
+            if (username) {
+                profile_name_container.textContent = username;
+            }
+        </script>
+
+        <div class="dashboard-background">
+
+            <div class="main-content">
+                <div class="message-content">
+                    <div class="message-forms">
+                        <a href="/Frontend/Account/dashboard.html">
+                            <div class="standard-tab">
+                                Images
+                            </div>
+                        </a>
+                    </div>
+                
+                    <!-- <div class="image-objects">
+                        <div class="image-object">
+                            <div class="image-container">
+                                <img src="/Frontend/assets/images/fav_dog.png" alt="">
+                            </div>
+                            <div class="image-meta">
+                                <div class="sender-info">
+                                    <div class="sender-profile-image">
+                                        <img src="/Frontend/assets/images/fav_dog.png" alt="">
+                                    </div>
+                                    <div class="sender-username">Username</div>
+                                </div>
+                                <div class="image-date">2023-08-11 : 02:00</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="image-objects" id="image-objects-container">
+                        <!-- Images will be dynamically added here -->
+                    </div>
+                </div>
+
+                <div class="other-content">
+                    <div class="share-key-container">
+                        <div class="share-key-form">
+                            <form id="share-key-form">
+                                <div class="form-title">Share Key:</div>
+                                <div class="form-content">
+                                    <div style="margin: 0.5em;">
+                                        <div class="label">
+                                            <label for="receiver">Receiver:</label>
+                                        </div>
+                                        <div class="input">
+                                            <input type="text" id="receiver" name="receiver">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="form-button" id="share-key-button">
+                                    Share
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="share-image-container" onclick="displayShareImageModalContainer()">
+                        Share Image
+                    </div>
+                    
+                    <a href="/Frontend/Account/dashboard.html" class="share-message-container">
+                        <div>Share Message</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMAGE VIEW MODAL -->
+        <div id="image-object-modal-container" class="modal-container">
+            <div id="image-object-modal-content" class="modal-content">
+        
+                <div class="object-style">
+                    <div id="image-object-responses">
+                        <!-- Container for image API responses -->
+                    </div>
+
+                    <div id="sender">
+                        <div class="object-label">Sender:</div>
+                        <div id="sender-data" class="object-data">Username</div>
+                    </div>
+
+                    <div id="receiver">
+                        <div class="object-label">Receiver:</div>
+                        <div id="receiver-data" class="object-data">Username</div>
+                    </div>
+
+                    <div id="time-sent">
+                        <div class="object-label">Time Sent:</div>
+                        <div id="time-sent-data" class="object-data">2023-08-11 02:00</div>
+                    </div>
+
+                    <div id="stego-image">
+                        <div class="object-label">Stego Image:</div>
+                        <div id="stego-image-data" class="image-container object-data">
+                            <img id="stego-image-image" src="" alt="Steganographic Image">
+                        </div>
+                    </div>
+
+                    <div id="encrypted-message-lsb">
+                        <div class="object-label">Encrypted Message:</div>
+                        <div id="encrypted-message-lsb-data" class="object-data">dnsliufkafndfukjhbafdkuuahufliewuuaidshjksncsbckjhdsafilhsdakf</div>
+                    </div>
+
+                    <div id="message-cipher">
+                        <div id="message-cipher-label" class="object-label">Cipher:</div>
+                        <div id="message-cipher-data" class="object-data">dnsliufkafndfukjhbafdkuuahufliewuuaidshjksncsbckjhdsafilhsdakf</div>
+                    </div>
+
+                    <form id="decrypt-image-form" enctype="multipart/form-data">
+                        <div id="private-key-data">
+                            <div class="object-label">
+                                <label for="private_key">Private Key:</label>
+                            </div>
+                            <input class="object-data" type="file" id="decrypt-private-key" name="private_key" required>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button id="decrypt" class="submit-button" type="button" name="decrypt" style="margin-right: 2em;">
+                                <span>Reveal</span>
+                            </button>
+    
+                            <button id="cancel" type="button" class="cancel-button">
+                                <span>Cancel</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHARE IMAGE MODAL -->
+        <div id="share-image-modal-container" class="modal-container">
+            <div class="modal-content">
+
+                <!-- SHARE IMAGE FORM -->
+                <div class="form-format">
+
+                    <div class="form-content">
+                        <div id="share-image-responses">
+                            <!-- Container for messages -->
+                        </div>
+
+                        <div class="form-title">
+                            Share Image
+                        </div>
+                        <div class="form-message">
+                            Share an encrypted message behind an image with an ally through CryptoStego's
+                            Steganography implementation.
+                        </div>
+
+                        <form id="share-image-form" method="POST">
+                            <div class="form-input">
+                                <label for="receiver" class="label">Receiver:</label>
+                                <input class="input-field" type="text" id="share-image-receiver" placeholder="Receiver" name="receiver" required>
+                            </div>
+
+                            <div class="form-input">
+                                <label for="message" class="label">Message:</label>
+                                <textarea class="input-field" id="share-image-message" placeholder="Message" name="message" cols="25" rows="10" required></textarea>
+                            </div>
+
+                            <div class="form-input">
+                                <label for="image" class="label">Image:</label>
+                                <img id="image-preview" src="../assets/images/image-preview.png" alt="Image for Steganography">
+                            </div>
+
+                            <div class="form-input">
+                                <label style="font-weight: bold;">Select Image:</label>
+
+                                <!-- Radio options for predefined system images -->
+                                <div id="image-radio-options">
+
+                                    <div class="radio-item">
+                                        <label for="radio-man">Sitting woman</label>
+                                        <input type="radio" name="image-option" id="radio-sitting-woman" value="sitting-woman">
+                                    </div>
+
+                                    <div class="radio-item">
+                                        <label for="radio-nature">Woman Hair</label>
+                                        <input type="radio" name="image-option" id="radio-woman-hair" value="woman-hair">
+                                    </div>
+
+                                    <div class="radio-item">
+                                        <label for="radio-nature">Sky</label>
+                                        <input type="radio" name="image-option" id="radio-sky" value="sky">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-input">
+                                <label for="private-key" class="label">Sender Private Key:</label>
+                                <input type="file" id="share-image-private-key" name="private_key" required>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button id="share-image" class="submit-button" type="submit" name="share-image" value="share-image">
+                                    <span>
+                                        Share <i id="submit-plane" class="fas fa-paper-plane"></i>
+                                    </span>
+                                </button>
+
+                                <button id="cancel" type="button" class="cancel-button" onclick="closeShareImageModalContainer()">
+                                    <span>
+                                        Cancel <i id="cancel-cross" class="fa-solid fa-circle-xmark"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/Frontend/assets/js/main.js"></script>
+    <script src="/Frontend/assets/js/modal.js"></script>
+    <script type="module" src="/Frontend/assets/js/logout.js"></script>
+    <script type="module" src="/Frontend/assets/js/images.js"></script>
+    <script type="module" src="/Frontend/assets/js/share_key.js"></script>
+    <script type="module" src="/Frontend/assets/js/share_image.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>
